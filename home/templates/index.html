@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
+{% extends "homebase.html" %}
 
-<title>İlk Django Sayfasi </title>
+{% block title %} index sayfasi {% endblock %}
+{% block keywords %} index sayfasi anahtar kelimeler {% endblock %}
+{% block description %} index sayfasi açiklama {% endblock %}
 
-</head>
-<body>
-    <h1>
-        HOŞ GELDİN KARDEŞ
-    </h1>
-    <h3>
-        Buradan Soner ve Sergen kardeşime selamlar...
-    </h3>
-    <p>
-        {{ text |safe }}
-    </p>
-    
-</body>
+{% block sidebar %}
+    {% include "sidebar.html" %}
+{% endblock %}
 
-</html>
+{% block slider %}
+    {% include "slider.html" %}
+{% endblock %}
+
+{% block content %}
+    {% include "content.html" %}
+{% endblock %}
