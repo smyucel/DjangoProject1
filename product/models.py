@@ -1,13 +1,14 @@
 from django.db import models
 
 # Create your models here.
-class Question(models.Model):
+class Category(models.Model):
     STATUS = (
         ('True', 'Evet'),
         ('False', 'Hayir'),
     )
-    title = models.CharField(max_length=200)
-    description = models.CharField(max_length=200)
+    title = models.CharField(max_length=30)
+    keywords = models.CharField(max_length=255,null=True)
+    description = models.CharField(max_length=255)
     image = models.ImageField(blank=True,upload_to='images/')
     status = models.CharField(max_length=10, choices=STATUS)
     slug = models.SlugField()
