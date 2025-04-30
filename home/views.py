@@ -1,10 +1,9 @@
 from django.shortcuts import render
 
-from .models import Question
+from home.models import Question, Setting
 
 
 def index(request):
-    
-    text="Django Kurulumu : python -m pip install -e django <br> Proje Oluşturma: django-admin startproject mysite <br> App ekleme: python manage.py startapp.pulls"
-    context = {'text': text}
+    setting = Setting.objects.get(pk=1)
+    context = {'setting': setting}
     return render(request, 'index.html', context)
